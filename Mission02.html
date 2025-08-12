@@ -1,0 +1,148 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <!-- Information about encoding in terms of language and website info. etc. contained in the "head" below which is not visible -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--This is what is seen on the tab of the website -->
+    <title>Chair-Point-solutions.com</title>
+    <!--"Link rel" links to the CSS from the html doc. for styling content. Each html "tag" identifier below can be used within the CSS doc. for that particular element or group of elements-->
+    <script src="script.js" defer ></script>
+    <link rel="stylesheet" href="Mission02.css" />
+  </head>
+
+  <!--Body contains ALL the main information inside the web page in terms of whats visible and will have many sub headings -->
+  <body>
+    <!-- Header is the main subheading within the body, at the top of the page.  -->
+    <header class="header">
+      <h1><strong>Chair Point Solutions</strong></h1>
+      <Office_Working.jpg" alt="Working Office" class="main-img" />
+
+      
+     <button id="ShopCartBtn">🛒</button> <!--This is where the shop cart button is grabbed from script-->
+    <div id="item-count" style="font-size: 14px; margin-top: 6px; font-weight: bold;">0 items</div> <!--This is where the item counter is grabbed from script-->
+
+
+      <p><b>Office chairs that are ergonomic, stylish and built for productivity &
+        comfort.</b>
+      </p>
+    </header>
+
+<!-- P= Paragraph, h1= A subheading usually within a section,  b/strong= bold  -->
+
+<!-- Below the header and within the body there can be many different types of headings and subheadings such as; 'section class', 'navbar class' and 'Div',  -->
+
+<!-- Navbar class below contans the main buttons for navigating through the website - a search box can be part of this list. They are laid out via the (unordered) list item tags  -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="search-box">
+          <input type="text" placeholder="Find your work pirch..." />
+          <button type="submit">Search</button>
+        </li>
+          
+      </ul>
+    </nav>
+
+    <!--Section class headings break the website down into main sections and contain groups of content--> 
+
+
+<!-- Stand-along section below for some text -->
+<section class="header2 expanded">
+  <h2>***BUY NOW PAY LATER - SUPER WEDNESDAY DEALS NOW ON!***</h2>
+</section>
+    
+    <main>
+      <section class="section1">
+        <!-- Contents images for the left column -->
+    <div class="left">
+  <h2>Work & Play</h2>
+
+  <img src="Gaming_Chair.jpg" alt="Gaming Chair" class="chair-img img1"
+ item="Gaming chair" data-price="875.37"/>
+  <br>
+  <img src="Office_footrest_chair.webp" alt="Foot Rest Chair" class="chair-img img2"
+ item="Foot Rest Chair" data-price="227.00"/>
+  <br/>
+  <img src="Comfy_office_chair.webp" alt="Comfy Chair" class="chair-img img3" item="Comfy Chair" data-price="259.90"/>
+  <br/>
+  <img src="Erganomic Chair.webp" alt="Erganomic" class="chair-img img4" item="Comfy Chair" data-price="249.99"/>
+
+
+
+
+</div>
+
+
+
+            
+        <div class="middle">
+          <!-- Contents images for the middle column -->
+          <p></p>
+          <img src="Gaming Chair 2.webp" alt="Gaming Chair2" class="chair-img img5" item="Gaming Chair 2" data-price="149.00"/>
+          <br>
+          <img src="White_Erganomic_chair.webp" alt="Foot Rest 2" class="chair-img img6" item="Foot Rest 2" data-price="249.99"/>
+          <br/>
+          <img src="Office_Chair_Link_Bl.png" alt="Chair link" class="chair-img img7" item="Chair Link" data-price="754.86"/>
+          <br/>
+          <img src="C300_office Chair.jpg" alt="C330" class="img8" item="C330" data-price="249.99"/>
+        </div>
+
+
+        <div class="right">
+          <!-- Contents images for the right column -->
+          <br/>
+          <br/>
+          <img src="Larkleaves_chair.jpg" alt="Larkleave Chair" class="chair-img img9" item="Larkleave Chair" data-price="482.00"/>
+          <br />
+          <img src="Office_chair 3.jpg" alt="Office3" class="chair-img img10" item="Office3" data-price="404.27"/>
+          <br />
+          <img src="Office_chair2.jpg" alt="Office2" class="img11" item="Office2" data-price="249.99"/>
+          <br/>
+          <img src="Erganomic WOW Chair.webp" alt="Erganomic2" class="img12" item="Erganomic2" data-price="249.99"/>
+        </div>
+
+<!-- <button id="ShopCartBtn">🛒</button>
+<div id="item-count" style="font-size: 14px; margin-top: 6px; font-weight: bold;">0 items</div> -->
+
+      </section>
+
+
+
+        <!-- Contents for section 2 - contact form & footer -->
+      <section class="section2">
+
+        <!-- Contact Form -->
+        <div id="contact-form">
+          <form
+              action="mailto:youremail@example.com"
+              method="post"
+              enctype="text/plain"
+              class=""
+          >
+            <h2>Request your free brochure today:</h2>
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br />
+            <input type="submit" value="Send" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+
+    <!--Footer-->
+    <footer class="footer">
+      <p>
+        Get your super Thursday discount by clicking here!:
+        <a href="" target="_blank">Super Thursday Discount Code</a>
+      </p>
+    </footer>
+  </body>
+</html>
