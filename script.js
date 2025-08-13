@@ -1,8 +1,6 @@
 console.log("connected");
 
-
-
-// The first 3 variables below are accessible and can be changed from anywhere within the code    i.e. Global. They hold the data that drives the UI.
+// The first 3 variables   i.e. Global. They hold the data that drives the UI.
 
 // "let" starts at 0 and will increase when a user clicks “Add to Cart.” This will indicate how many items are in the cart.
 let itemCount = 0;
@@ -17,10 +15,11 @@ let cartOpen = false;
 
 
 
-// Below are the item count display and the shop cart button accessed via script - they grab HTML elements to control their properties via .getElmentById. JS can’t interact with HTML unless you connect to it. These two lines form the bridge without them, the script would be floating without targets. 
+// Below are the item count display and the shop cart button accessed via script.
+
 const itemCountDisplay = document.getElementById("item-count");
 const shopCartBtn = document.getElementById("ShopCartBtn");
-// The 'item count' display and the 'shopCartBtn' (inc. its 'click' behavior) is linked and updated in other sections further down.
+
 
 // Here are the shopping cart button styles and hover effects to match the home buttons etc. in the navbar incl. when mouse is over the buton. 
 shopCartBtn.style.backgroundColor = "#dedede";
@@ -51,7 +50,7 @@ const itemCountDisplayStyles = {
 Object.assign(itemCountDisplay.style, itemCountDisplayStyles);
 
 
-// This first function runs when the page has set everything up - it locates all the chair images, wraps each in a container, adds the price tag and the "add to cart" button on each product then also handles the click behaviour to update the cart. It connects the visual items to the cart as a small thumbnail. The section also includes all the styles associated with the overlays.
+// This first function locates all the chair images, wraps each in a container, adds the price tag and the "add to cart" button on each product then also handles the click behaviour to update the cart. 
 function addChairOverlays() {
   const allChairImages = document.querySelectorAll('.chair-img');
 
@@ -86,14 +85,23 @@ const overlayStyles = {
 };
 Object.assign(overlay.style, overlayStyles);
 
-
+//This line below creates a new element in memory.
     const priceTag = document.createElement('div');
+
+//This next line pulls the price from the image’s data and formats it. 
     priceTag.textContent = `$${img.dataset.price}`;
+
+    // This next line inserts the price tag into the overlay.
     overlay.appendChild(priceTag);
 
+
+// The next line creates a new  element which is a button, so buyers can click to add the item to their cart.
 const button = document.createElement('button');
+
+// Sets the button’s label to “Add to Cart”:
 button.textContent = `Add to Cart`;
 
+//Add to cart button styles and placement
 const buttonStyles = {
   backgroundColor: '#ff9800',
   color: 'white',
@@ -103,9 +111,9 @@ const buttonStyles = {
   borderRadius: '4px',
   cursor: 'pointer'
 };
-
+//C
 Object.assign(button.style, buttonStyles);
-//Notes to self - more on this section
+
 
 
 //This section shows what happens when the "add to cart" button is clicked i.e. it adds +1 to the counter each time 
@@ -115,7 +123,9 @@ Object.assign(button.style, buttonStyles);
       itemCountDisplay.style.display = "inline-block";
 
 
+      // Here below a new object has been created . This object will hold all the relevant data about the chair the user clicked on. 
       const item = {
+
         name: img.alt || "Chair",
         price: parseFloat(img.dataset.price),
         imageSrc: img.src
@@ -128,9 +138,9 @@ Object.assign(button.style, buttonStyles);
     wrapper.appendChild(overlay);
   });
 }
-//More info here. Can it be simplified a bit more?
 
-// Make it so when click on shopping cart it will open panel on right
+
+// This makes it so when click on shopping cart it will open panel on right
 shopCartBtn.onclick = function () {
   cartOpen = !cartOpen;
   if (cartOpen) {
@@ -159,7 +169,7 @@ const cartPanelStyles = {
 Object.assign(cartPanel.style, cartPanelStyles);
 
 
-//This second function loops through the cartItems then adds each item’s image, info. and calculates and displays the total price. It also adds the close button and the styling for inside the panel. 
+//This second function goes through the cartItems then adds each item’s image, info. and calculates and displays the total price. It also adds the close button and the styling for inside the panel. 
 function addCartItemsTogether() {
   cartPanel.innerHTML = "";
 
@@ -236,12 +246,10 @@ const closeBtnStyles = {
 Object.assign(closeBtn.style, closeBtnStyles);
 cartPanel.appendChild(closeBtn);
 
+
 // Add the shop cart panel to the original page
 document.body.appendChild(cartPanel);
-
-
-// I apparently need this for it to work as when I ran the code through AI for bugs it suggested some things to make it work and this was one of those things. 
-
+ 
 document.addEventListener('DOMContentLoaded', addChairOverlays);
 
 
